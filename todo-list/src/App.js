@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Task from './Task';
+import Header from './Header';
+import About from './About';
 import './App.css';
     
 class App extends Component { 
@@ -13,6 +15,10 @@ class App extends Component {
     this.addTask = this.addTask.bind(this)
     this.removeTask = this.removeTask.bind(this)
   } 
+
+  componentDidMount(){
+    this.addTask()
+  }
     
   addTask(){ 
     var currentCounter = this.state.counter;
@@ -27,14 +33,17 @@ class App extends Component {
       
   render(){ 
     return ( 
-      <div id="task-list"> 
-       <h2>Task list</h2>   
-       <p>{this.state.taskList}</p>
+      <>
+      <Header />
       
-        <button onClick={this.addTask}> 
-          Add task
-        </button> 
-      </div> 
+        <div id="task-list">
+          <h1>Task list</h1>   
+          {this.state.taskList}
+
+          <button onClick={this.addTask}><img className="main-button" src="/plus.png" alt="Add task" border="0" /></button>
+        </div> 
+        <About />
+      </>
     ) 
   } 
 } 
