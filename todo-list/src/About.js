@@ -5,13 +5,13 @@ import './App.css';
 export default function About() {
     useEffect(()=>{
         // Get the modal
-        var modal = document.getElementById("myModal");
+        var modal = document.getElementById("about-modal");
 
         // Get the button that opens the modal
-        var btn = document.getElementById("modal-button");
+        var btn = document.getElementById("about-button");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementById("about-close");
 
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
@@ -32,16 +32,16 @@ export default function About() {
     })
 
     return <>
-        <div id="myModal" className="modal">
+        <div id="about-modal" className="modal">
             <div className="modal-content">
-                <span className="close">&times;</span>
+                <span className="close" id="about-close">&times;</span>
                 Todo list app developed using React.<br />
-                Github repository link: <a href="https://github.com/josefmicak/react-apps/tree/main/todo-list">https://github.com/josefmicak/react-apps/tree/main/todo-list</a><br/>
-                Icons source link: <a href="https://www.flaticon.com">https://www.flaticon.com</a>
+                Github repository link: <a href="https://github.com/josefmicak/react-apps/tree/main/todo-list" target="_blank" rel="noreferrer">https://github.com/josefmicak/react-apps/tree/main/todo-list</a><br/>
+                Icons source link: <a href="https://www.flaticon.com" target="_blank" rel="noreferrer">https://www.flaticon.com</a>
             </div>
         </div>
         <div id="about">
-            <button><img className="main-button" id="modal-button" src="/info.png" alt="About" border="0" /></button>
+            <button><img className="main-button" id="about-button" src="/info.png" alt="About" border="0" /></button>
         </div>
         </>;
 }
